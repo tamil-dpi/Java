@@ -1,0 +1,14 @@
+class Main {
+    public static void main(String[] args) {
+        String str="mom";
+        StringBuffer sb= new StringBuffer(str);
+        String reverse=sb.reverse().toString();
+        if(str.equals(reverse)){
+            System.out.print("palindrome");
+        }
+        else{
+            System.out.print("not palindrome");
+        }
+        
+    }
+}
