@@ -1,0 +1,19 @@
+class Mul{
+public void display(int n){
+    if(n<=0){
+    }
+        int fact=1;
+        for(int i=1;i<=n;i++){
+        fact *=i;
+        }
+        System.out.print(fact);
+    
+    }
+}      
+
+public class Main{
+    public static void main (String[] args){
+        Mul mul=new Mul();
+        mul.display(5);
+    }
+}
