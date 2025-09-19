@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class Maths{
+    void add(int a){
+        System.out.println("The value a is : " +a);
+    }
+}
+class Addition  {
+    void adds(int b){
+      System.out.println("The value b is :" + b);  
+    } 
+}
+public class Main{
+    public static void main (String [] args){
+        Maths m=new Maths();
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the value ");
+        int ic=sc.nextInt();
+        m.add(ic);
+        Addition a=new Addition();
+        Scanner nu= new Scanner(System.in);
+        System.out.println("Enter the value ");
+        int i=nu.nextInt();
+        a.adds(i);
+        
+        sc.close();
+    } 
+}
