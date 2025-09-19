@@ -1,0 +1,17 @@
+class Grandfather{
+    void land(){
+    System.out.println("100 acers");
+    }
+}
+class Father extends Grandfather{
+    void home(){
+        System.out.println("two beach house");
+    }
+}
+public class Main{
+   public static void main (String[] args) {
+       Father f= new Father();
+       f.home();
+       f.land();
+}
+}
