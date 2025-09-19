@@ -1,0 +1,20 @@
+class Animals{
+    void dog(){
+        System.out.println("Bark");  
+    
+    }
+}
+class Puppy extends Animals{
+    void puppy(){
+        super.dog();
+        System.out.println("wow wow wow");
+       
+    }
+}
+
+public class Main{
+   public static void main (String[] args) {
+      Puppy p=new Puppy();
+      p.puppy();
+   }
+}
