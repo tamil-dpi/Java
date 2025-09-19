@@ -1,0 +1,29 @@
+class Pradeep{
+    void appa(){
+        System.out.println("10 wells");  
+    
+    }
+}
+class Sujithre extends Pradeep{
+    void daughter(){
+        System.out.println("Jwellers");
+       
+    }
+}
+class Gowtham extends Pradeep{
+    void son(){
+        System.out.println("BMW");
+       
+    }
+}
+
+public class Main{
+   public static void main (String[] args) {
+      Sujithre s= new Sujithre();
+      s.daughter();
+      s.appa();
+     Gowtham d= new Gowtham();
+      d.son();
+      d.appa();      
+   }
+}
