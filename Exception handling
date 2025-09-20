@@ -1,0 +1,23 @@
+class EvenException extends Exception {
+    
+}
+public class Main {
+    static void cheack(int a) throws EvenException{
+        if(a%2==0){
+            throw new EvenException();
+        }
+        else{
+            System.out.println("Odd Number");
+        }
+      
+    }    
+   public static void main(String[] args){
+        try{
+            cheack(5);
+        }catch(EvenException e){
+            System.out.println("Even number ");
+        }finally{
+            System.out.println("the code was executed");
+        }
+   }
+}
