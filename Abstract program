@@ -1,0 +1,27 @@
+abstract class Boobalan{
+    abstract void fruit();
+     void shop(){
+         System.out.println("Erode fruits shop boobalan");
+     }
+}
+class Tomato extends Boobalan{
+    void fruit(){
+        System.out.println("fresh fruit");
+    }
+}
+class Potato extends Boobalan{
+    void fruit(){
+        System.out.println("dry fruits");
+    }
+}
+
+public class Main{ 
+    public static void main (String[] args) {
+     Boobalan b= new Tomato();
+     b.fruit();
+     b.shop();
+     Boobalan bo= new Potato();
+     bo.fruit();
+     bo.shop();
+    }
+}
