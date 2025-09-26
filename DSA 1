@@ -1,0 +1,21 @@
+class Node{
+    int data;
+    Node next;
+    
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        
+    }
+}
+public class Main{
+    public static void main (String[] args) {
+    Node frst= new Node(10);
+    Node secnd= new Node(20);
+    System.out.println(frst.data);
+    System.out.println(frst.next);
+    System.out.println(secnd.data);
+    System.out.println(secnd.next);
+
+    }
+}
