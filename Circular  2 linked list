@@ -1,0 +1,169 @@
+class DCLL {
+    Node head;
+
+    class Node {
+        int data;
+        Node prev, next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    // INSERT AT BEGINNING
+    public void insertAtBeginning(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            head.next = head;
+            head.prev = head;
+        } else {
+            Node last = head.prev;
+            newNode.next = head;
+            newNode.prev = last;
+
+            last.next = newNode;
+            head.prev = newNode;
+
+            head = newNode;
+        }
+    }
+
+    // INSERT AT END
+    public void insertAtEnd(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            head.next = head;
+            head.prev = head;
+        } else {
+            Node tail = head.prev;
+
+            tail.next = newNode;
+            newNode.prev = tail;
+            newNode.next = head;
+            head.prev = newNode;
+        }
+    }
+
+    // INSERT AT POSITION (1-based)
+    public void insertAtPosition(int data, int pos) {
+        if (pos <= 1 || head == null) {
+            insertAtBeginning(data);
+            return;
+        }
+
+        Node newNode = new Node(data);
+        Node temp = head;
+        int count = 1;
+
+        while (count < pos - 1 && temp.next != head) {
+            temp = temp.next;
+            count++;
+        }
+
+        newNode.next = temp.next;
+        newNode.prev = temp;
+        temp.next.prev = newNode;
+        temp.next = newNode;
+    }
+
+    // DELETE FROM BEGINNING
+    public void deleteAtBeginning() {
+        if (head == null) {
+            System.out.println("List is empty. Cannot delete.");
+            return;
+        }
+
+        // If there is only one node
+        if (head.next == head) {
+            head = null;
+        } else {
+            Node last = head.prev;
+            Node newHead = head.next;
+
+            last.next = newHead;
+            newHead.prev = last;
+            head = newHead;
+        }
+    }
+
+    // DELETE FROM END
+    public void deleteAtEnd() {
+        if (head == null) {
+            System.out.println("List is empty. Cannot delete.");
+            return;
+        }
+
+        // If there is only one node
+        if (head.next == head) {
+            head = null;
+        } else {
+            Node secondLast = head.prev.prev;
+
+            secondLast.next = head;
+            head.prev = secondLast;
+        }
+    }
+
+    // DISPLAY FORWARD
+    public void displayForward() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        System.out.print("Forward: ");
+        Node temp = head;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        } while (temp != head);
+        System.out.println();
+    }
+
+    // DISPLAY BACKWARD
+    public void displayBackward() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        System.out.print("Backward: ");
+        Node temp = head.prev;
+        do {
+            System.out.print(temp.data + " ");
+            temp = temp.prev;
+        } while (temp != head.prev);
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        DCLL list = new DCLL();
+        list.insertAtEnd(10);
+        list.insertAtEnd(20);
+        list.insertAtEnd(30);
+        list.insertAtEnd(40);
+        list.displayForward(); // Forward: 10 20 30 40 
+        list.displayBackward(); // Backward: 40 30 20 10
+
+        System.out.println("\nDeleting from the beginning...");
+        list.deleteAtBeginning();
+        list.displayForward(); // Forward: 20 30 40 
+        list.displayBackward(); // Backward: 40 30 20 
+
+        System.out.println("\nDeleting from the end...");
+        list.deleteAtEnd();
+        list.displayForward(); // Forward: 20 30 
+        list.displayBackward(); // Backward: 30 20 
+
+        System.out.println("\nTesting single-node case...");
+        DCLL singleNodeList = new DCLL();
+        singleNodeList.insertAtBeginning(100);
+        singleNodeList.displayForward(); // Forward: 100 
+        singleNodeList.deleteAtBeginning();
+        singleNodeList.displayForward(); // List is empty
+    }
+}
