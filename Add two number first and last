@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number: ");
+        int num = sc.nextInt();
+
+        int lastDigit = num % 10;
+        int firstDigit = num;
+
+        while (firstDigit >= 10) {
+            firstDigit = firstDigit / 10;
+        }
+
+        int sum = firstDigit + lastDigit;
+
+        System.out.print("Add two number: " + sum);
+    }
+}
