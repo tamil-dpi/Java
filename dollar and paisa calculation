@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the Dollar: ");
+        int dollar1 = sc.nextInt();
+        System.out.print("Enter the Paisa: ");
+        int paisa1 = sc.nextInt();
+
+        System.out.print("Enter the Dollar: ");
+        int dollar2 = sc.nextInt();
+        System.out.print("Enter the Paisa: ");
+        int paisa2 = sc.nextInt();
+
+        int totalDollar = dollar1 + dollar2;
+        int totalPaisa = paisa1 + paisa2;
+
+        if (totalPaisa >= 100) {
+            totalDollar = totalDollar + 1;
+            totalPaisa = totalPaisa - 100;
+        }
+
+        System.out.println("Total Dollar: " + totalDollar);
+        System.out.println("Total Paisa: " + totalPaisa);
+    }
+}
