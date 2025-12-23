@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String [] args){
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter total treasure:");
+        int num1= sc.nextInt();
+         int a= num1 *50 / 100;
+         int b= num1 *25 / 100;
+         int remaining = num1 - (a+b);
+          
+          int c= remaining/3;
+           int d= remaining/3;
+            int e= remaining/3;
+            
+             System.out.println(a);
+              System.out.println(b);
+               System.out.println(c);
+                System.out.println(d);
+                 System.out.println(e);
+  }
+}
