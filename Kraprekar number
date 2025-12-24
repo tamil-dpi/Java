@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int temp = n;
+
+        int square = n * n;
+
+        int count = 0;
+        while (n != 0) {
+            n = n / 10;
+            count++;
+        }
+
+        int power = (int) Math.pow(10, count);
+
+        int firstHalf = square / power;
+        int secondHalf = square % power;
+
+        if (firstHalf + secondHalf == temp) {
+            System.out.println("Kaprekar Number");
+        } else {
+            System.out.println("Not Kaprekar Number");
+        }
+
+        sc.close();
+    }
+}
