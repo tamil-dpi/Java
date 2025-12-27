@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		int n = sc.nextInt();
+		int ogn = n;
+		int sum=0;
+		while(n!=0){
+		    int fact=1;
+		    int temp = n%10;
+		    if(temp==0){
+		        n=n/10;
+		    }else{
+		        for(int i=1;i<=temp;i++){
+		            fact = fact*i;
+		        }
+		        sum = sum+fact;
+		        n=n/10;
+		    }
+		}
+		if(ogn==sum){
+		    System.out.println("Fact Num");
+		}else{
+		    System.out.println("Not a Fact Num");
+		}
+	}
+}
