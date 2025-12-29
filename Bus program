@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class BusAllocation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        
+        System.out.print("Enter number of groups: ");
+        int group = sc.nextInt();
+        System.out.print("Enter bus capacity: ");
+        int capacity = sc.nextInt();
+
+        int[] members = new int[group];
+        for (int i = 0; i < group; i++) {
+            System.out.print("Enter members for group " + (i + 1) + ": ");
+            members[i] = sc.nextInt();
+        }
+
+        
+        for (int i = 0; i < group; i++) {
+            if (members[i] > capacity) {
+                System.out.println("Invalid group size: A single group exceeds bus capacity.");
+                return;
+            }
+        }
+
+        
+        int buses = 1; 
+        int currentBusSum = 0;
+
+        for (int i = 0; i < group; i++) {
+            
+            if (currentBusSum + members[i] > capacity) {
+                
+                buses++;
+                currentBusSum = members[i];
+            } else {
+                
+                currentBusSum += members[i];
+            }
+        }
+
+        System.out.println("Minimum number of buses required: " + buses);
+        sc.close();
+    }
+}
