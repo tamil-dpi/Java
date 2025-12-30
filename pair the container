@@ -1,0 +1,32 @@
+import java.util.*;
+class Main {
+	public static void main (String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int num=sc.nextInt();
+		
+		int [] arr= new int[num];
+		for(int i=0;i<num; i++) {
+		
+				arr[i]=sc.nextInt();
+			
+		}
+			Arrays.sort(arr);
+			System.out.print("Sorted array:");
+			for(int i=0 ;i<num; i++) {
+					System.out.println(arr[i] +" ");
+				
+			    
+			}
+			int left=0;
+			int right=num-1;
+			while(left<right){
+			    System.out.println(arr[right]+" "+arr[left]);
+			    right--;
+			    left++;
+			}
+			if(num%2!=0){
+			    System.out.print(arr[left]+ " 0 ");
+			}
+			}
+
+}
