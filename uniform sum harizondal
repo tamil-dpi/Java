@@ -1,0 +1,19 @@
+import java.util.*;
+class Main{
+    public static void main (String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        int [] [] arr=new int[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        int frow=0,back=0;
+        for(int i=0;i<n;i++){
+            frow+=arr[i][i];
+            back+=arr[i][n-1-i];
+        }
+        System.out.println(frow==back?"uniform":"not uniform");
+    }
+}
