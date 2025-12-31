@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String [] args){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the Character:");
+        String str=sc.nextLine();
+        System.out.print("Enter the Character:");
+        String str1=sc.nextLine();
+        int i=0,j=0;
+        while((str.length()-1>=i) && (str1.length()-1>=j)){
+            if(str1.charAt(j)==str.charAt(i)){
+                j++;
+            }
+            i++;
+        }
+        if(j==str1.length()){
+            System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+
+    }
+}
