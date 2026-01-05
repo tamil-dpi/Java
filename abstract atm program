@@ -1,0 +1,30 @@
+class Account{
+    private String name;
+    private  int accNo;
+    private int phonNo;
+ public void setMethod(String n,int a,int p){
+     name=n;
+     accNo=a;
+     phonNo=p;
+     
+ }
+ public String getName(){
+     return name;
+ }
+ public int getaccNo(){
+     return accNo;
+ }
+ public int getphonNo(){
+     return phonNo;
+ }
+}
+ public class Main{
+     public static void main (String[] args) {
+         Account obj=new Account();
+          obj.setMethod("Somu",123478,456264);
+        System.out.println(obj.getName());
+        System.out.println(obj.getaccNo());
+        System.out.println(obj.getphonNo());
+
+     }
+ }
