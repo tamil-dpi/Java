@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Main{
+    public static void main (String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n=sc.nextInt();
+        int or=n;
+        int sum=0;
+        int temp1=String.valueOf(n).length();
+  while(n>0){
+    int temp=n%10;
+    sum+=(int)Math.pow(temp,temp1);
+    n=n/10;
+}
+if(sum==or){
+    System.out.print("amstrong");
+}
+else{
+    System.out.print("no");
+}
+    }
+}
