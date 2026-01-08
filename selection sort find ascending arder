@@ -1,0 +1,40 @@
+import java.util.*;
+class Main{
+    public static void main (String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter the size:");
+            int n=sc.nextInt();
+            
+            int arr[]=new int[n];
+            for(int i=0;i<n;i++){
+               arr[i]=sc.nextInt();
+        }
+        sc.nextLine();
+        System.out.println("enter the string elemnt:");
+       // String str=sc.nextLine();
+        String st[]=new String[n];
+        for(int i=0;i<n;i++){
+            st[i]=sc.nextLine();
+        }
+        for(int i=0;i<n;i++){
+            int min=i;
+            for(int j=i+1;j<n;j++){
+                if(arr[min]>arr[j]){
+                    min=j;
+                }
+            }
+            int temp=arr[min];
+            arr[min]=arr[i];
+            arr[i]=temp;
+            
+            
+            String tempstr=st[min];
+            st[min]=st[i];
+            st[i]=tempstr;
+        }
+        System.out.println("Sorted array:");
+        for(int i=0;i<n;i++){
+            System.out.println(arr[i]+" "+st[i]);
+        }
+    }
+}
