@@ -1,0 +1,27 @@
+import java.net.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            URL url = new URL("https://jsonplaceholder.typicode.com/posts/1");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+            con.setRequestMethod("GET");
+
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(con.getInputStream())
+            );
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            br.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
